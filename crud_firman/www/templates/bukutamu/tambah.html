@@ -1,0 +1,21 @@
+<ion-view view-title="Tambah Buku Tamu">
+  <ion-content>
+    <div class="list">
+		<label class="item item-input">
+			<input type="text" ng-model="bukuTamu.nama" placeholder="Nama">
+		</label>
+
+		<label class="item item-input">
+			<input type="text" ng-model="bukuTamu.email" placeholder="Email">
+		</label>
+
+		<label class="item item-input">
+			<textarea placeholder="Pesan" ng-model="bukuTamu.pesan"></textarea>
+		</label>
+
+		<button class="button button-balanced button-block" ng-click="simpan(bukuTamu);">
+			Save
+        </button>
+	</div>
+  </ion-content>
+</ion-view>

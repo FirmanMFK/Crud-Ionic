@@ -1,0 +1,59 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{bukuTamu.nama}}">
+
+<ion-content class="padding">
+    <img ng-src="{{bukuTamu.foto}}" style="width: 120px; height: 120px">
+    <h3>Detail :</h3>
+    <p>
+        <font size="2" color="gray" >Nama : {{bukuTamu.nama}}</font>
+    <br>
+        <font size="2" color="gray" >Email : {{bukuTamu.email}}</font>
+    <br>
+        <font size="2" color="gray" >Pesan : {{bukuTamu.pesan}}</font>
+    </p>
+    <button class="button button-balanced button-block" ng-click="editModal()">Edit </button>
+</ion-content>
+<script id="edit.html" type="text/ng-template">
+        <div class="modal">
+            <ion-header-bar class="bar-stable">
+                <button class="button button-icon icon ion-close-circled" ng-click="batal()"></button>
+                <h1 class="title"> Edit </h1>
+            </ion-header-bar>
+            <ion-content>
+                <form>
+                    <div class="list">
+                        <label class="item item-input">
+                        <span class="input-label">ID :</span>
+                            <input type="hidden" placeholder="{{bukuTamu.buku_id}}" ng-model="bukuTamu.buku_id" init-from-form>
+                            <p>{{bukuTamu.buku_id}}</p>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Nama :</span>
+                            <input type="text" placeholder="{{bukuTamu.nama}}" ng-model="bukuTamu.nama" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Email :</span>
+                            <input type="text" placeholder="{{bukuTamu.email}}" ng-model="bukuTamu.email" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Pesan :</span>
+                            <input type="text" placeholder="{{bukuTamu.pesan}}" ng-model="bukuTamu.pesan" init-from-form>
+                        </label>
+                        <button class="button button-balanced button-block" ng-click="edit(bukuTamu);">
+                            Save
+                        </button>
+                        <button class="button button-balanced button-block" ng-click="returns(bukuTamu);">
+                            Delete
+                        </button>
+                    </div>
+                </form>
+        </ion-content>
+        </div>
+</script>
+
+</ion-view>
